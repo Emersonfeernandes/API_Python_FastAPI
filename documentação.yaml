@@ -1,0 +1,17 @@
+endponts:
+  - name: api_fast  # O nome da API criada
+  path: http://127.0.0.1:8000/ # Caminho URL da nossa API
+  arquivo: POST.ipynb # Arquivo para o metodo POST após api_fast ser executado.
+  requests:
+    - name: api_fast # O nome da primeira requisição
+    path: / # O Caminho raiz da primeira requisição
+    method: get # O metodo utilizado na primeira requisição.
+    execução:
+      - name: api_fast # Nome da API
+      executar: uvicorn api_fast:app --reload # Usar esse comando em ambiente virtual.
+      digite: qualquer numero # Nenhum número é divisivel por zero.
+      operações: adição, subtração, divisão, multiplicação # TODOS EM MINUSCULO!
+      tests:
+        - name: teste # O nome do teste.
+        executar: python -m pytest teste.py # Em um ambiente virtual
+        assert: ${{response.status == 200}}
